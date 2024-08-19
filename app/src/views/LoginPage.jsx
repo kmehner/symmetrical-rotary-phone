@@ -2,12 +2,14 @@ import React, { useContext, useState } from 'react'
 import { Form, Button, Container } from 'react-bootstrap'
 import UserContext from '../context/UserContext'
 import { useNavigate } from 'react-router-dom'
+import useCartCount from '../hooks/useCartCount'
 
 const LoginPage = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const { setUser } = useContext(UserContext)
   const navigate = useNavigate(); 
+  const cartCount = useCartCount()
 
   const handleSubmit = (event) => {
     event.preventDefault() // prevent default form behavior (refresh page)
@@ -44,6 +46,7 @@ const LoginPage = () => {
         Login
       </Button>
       </Form>
+      <h2>Using our cart count again: {cartCount}</h2>
     </Container>
   )
 }
