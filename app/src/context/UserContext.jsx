@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import React from "react";
 
 // createContext() is a function that creates a new context object.
 // You could compare it to the useState() function that creates a new state variable.

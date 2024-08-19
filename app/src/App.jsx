@@ -1,5 +1,8 @@
 import React from 'react'
 import UserContext from './context/UserContext'
+import HomePage from './views/HomePage'
+import LoginPage from './views/LoginPage'
+import { Routes, Route } from 'react-router-dom'
 
 const App = () => {
   const [user, setUser] = React.useState({
@@ -16,8 +19,10 @@ const App = () => {
 
   return (
     < UserContext.Provider value={{ user, setUser}}>
-      <HomePage/>
-      <LoginPage/>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
     </ UserContext.Provider>
   )
 }
